@@ -4,5 +4,6 @@ namespace YG
     {
         public int Money = 0;
         public int Metal = 0;
+
     }
 }
