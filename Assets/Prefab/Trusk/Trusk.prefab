@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19dd953beb1244140a37dc7883cc40b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedSprite: {fileID: 21300000, guid: 2f9cda057fcdcf846be07b5381de08ab, type: 3}
+  _attackerSprite: {fileID: 21300000, guid: 2f9cda057fcdcf846be07b5381de08ab, type: 3}
+  _stealtherSprite: {fileID: 21300000, guid: 2f9cda057fcdcf846be07b5381de08ab, type: 3}
 --- !u!212 &5861378246557519516
 SpriteRenderer:
   m_ObjectHideFlags: 0
