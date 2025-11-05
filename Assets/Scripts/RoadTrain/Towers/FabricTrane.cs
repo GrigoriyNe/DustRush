@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 using YG;
 
 namespace RoadTrane
@@ -10,6 +9,9 @@ namespace RoadTrane
     {
         [SerializeField] private TowersHashTable _towersHash;
         [SerializeField] private WagonsHashTable _wagonsHash;
+
+        [SerializeField] private Truck _truck; 
+        [SerializeField] private TruckInstaller _truckInstaller; 
 
         private Dictionary<int, GameObject> _hashTableTower = new Dictionary<int, GameObject>();
         private Dictionary<int, GameObject> _hashTableWagon = new Dictionary<int, GameObject>();
@@ -50,6 +52,18 @@ namespace RoadTrane
         {
             CreateWagon();
             CreateTower();
+            CreateTruck();
+        }
+
+        private void CreateTruck()
+        {
+            Truck truck;
+
+            truck = Instantiate(_truck,
+                transform.position = _wagons[0].GetComponent<Wagon>().FrontCouplingPosition.position,
+                Quaternion.identity);
+
+            _truckInstaller.SetType(truck.TypeTrusk);
         }
 
         private void CreateWagon()
