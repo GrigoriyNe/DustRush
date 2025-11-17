@@ -16,6 +16,7 @@ namespace RoadTrane
         [SerializeField] private Sprite _speedSprite;
         [SerializeField] private Sprite _attackerSprite;
         [SerializeField] private Sprite _stealtherSprite;
+
         public string TypeTrusk { get; private set; }
 
         private void OnEnable()

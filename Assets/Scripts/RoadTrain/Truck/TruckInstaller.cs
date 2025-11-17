@@ -1,7 +1,5 @@
 ﻿using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace RoadTrane
@@ -21,17 +19,12 @@ namespace RoadTrane
 
         private void OnEnable()
         {
-            _startBoost.onClick.AddListener(PlayBoost);
+            _startBoost.onClick.AddListener(ApplyBoost);
         }
 
         public void SetType(string value)
         {
             _type = value;
-        }
-
-        private void PlayBoost()
-        {
-            ApplyBoost();
         }
 
         private void ApplyBoost()
@@ -53,6 +46,7 @@ namespace RoadTrane
         {
             _mover.BoostSpeed(SpeedBoost);
         }
+
         private void IncreaseDamage()
         {
             throw new NotImplementedException();

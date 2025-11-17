@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using YG;
 
@@ -22,7 +21,8 @@ namespace RoadTrane
         private List<Tower> _createdTowers = new List<Tower>();
 
         private List<int> _loadedWagons = new List<int>();
-        private List<int> _createdWagonsId = new List<int>();
+        private List<int> _loadedTowers = new List<int>();
+
         private List<int> _loadedTower = new List<int>();
         private List<int> _loadedWagonTower = new List<int>();
         private List<int> _loadedPositionTower = new List<int>();
@@ -68,15 +68,14 @@ namespace RoadTrane
 
         private void CreateWagon()
         {
-            Vector2 _defaultPosition = Vector2.zero;
-
+            Vector2 defaultPosition = Vector2.zero;
             Wagon wagon = null;
 
             for (int i = 0; i < _wagons.Count; i++)
             {
                 if (i == 0)
                 {
-                    wagon = Instantiate(_wagons[i], _defaultPosition, Quaternion.identity).GetComponent<Wagon>();
+                    wagon = Instantiate(_wagons[i], defaultPosition, Quaternion.identity).GetComponent<Wagon>();
                 }
                 else
                 {
@@ -108,15 +107,15 @@ namespace RoadTrane
 
         private void OnTowerDead(int fullId)
         {
-            _createdWagonsId.Remove(fullId);
+            _loadedTowers.Remove(fullId);
         }
 
         public void Load()
         {
             _loadedWagons = YG2.saves.SavedWagons;
-            _createdWagonsId = YG2.saves.SavedTowers;
+            _loadedTowers = YG2.saves.SavedTowers;
 
-            foreach (int item in _createdWagonsId)
+            foreach (int item in _loadedTowers)
             {
                 _loadedTower.Add(item % 100);
                 _loadedWagonTower.Add(item / 1000);
@@ -148,9 +147,9 @@ namespace RoadTrane
                 savedWagans.Add(_wagons[i].GetComponent<Wagon>().IdWagon);
             }
 
-            for (int i = 0; i < _createdWagonsId.Count; i++)
+            for (int i = 0; i < _loadedTowers.Count; i++)
             {
-                savedTower.Add(_createdWagonsId[i]);
+                savedTower.Add(_loadedTowers[i]);
             }
 
             YG2.saves.SavedWagons = savedWagans;
