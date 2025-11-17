@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace RoadTrane
 {
-    public class Wagon : MonoBehaviour
+    public class Wagon : TranePart
     {
         public enum Type
         {
@@ -18,10 +19,12 @@ namespace RoadTrane
         [SerializeField] private string Name;
         [SerializeField] private Type TypeWagon;
 
+
         public Transform BackCouplingPosition => _backCouplingPosition;
         public Transform FrontCouplingPosition => _front—ouplingPosition;
 
         public int IdWagon { get; private set; }
+
 
         public Transform GetPointTower(int key)
         {
@@ -31,6 +34,10 @@ namespace RoadTrane
         public void SetID(int key)
         {
             IdWagon = key;
+        }
+
+        public override void OnEnabled()
+        {
         }
     }
 }

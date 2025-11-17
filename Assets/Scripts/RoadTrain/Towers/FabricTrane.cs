@@ -99,6 +99,7 @@ namespace RoadTrane
 
                 tower = Instantiate(_towers[i].GetComponent<Tower>());
                 tower.transform.position = target.position;
+                tower.transform.parent = target.parent;
                 tower.SetPositionOnTrane((_loadedWagonTower[i] * 10) + _loadedPositionTower[i]);
                 tower.TowerDead += OnTowerDead;
                 _createdTowers.Add(tower);

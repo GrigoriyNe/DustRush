@@ -5,7 +5,7 @@ using YG;
 namespace RoadTrane
 {
     [RequireComponent(typeof (SpriteRenderer))]
-    public class Truck : MonoBehaviour
+    public class Truck : TranePart
     {
         public const string SpeedTrusk = "Speeder";
         public const string Attacker = "Attacker";
@@ -19,7 +19,7 @@ namespace RoadTrane
 
         public string TypeTrusk { get; private set; }
 
-        private void OnEnable()
+        public override void OnEnabled()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
 
