@@ -403,6 +403,9 @@ MonoBehaviour:
   - {fileID: 513737428}
   - {fileID: 494689799}
   - {fileID: 953693485}
+  - {fileID: 1487173285}
+  - {fileID: 1269512153}
+  - {fileID: 1132933698}
 --- !u!1 &494689797
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,6 +852,13 @@ MonoBehaviour:
   _wagonEmpty_1: {fileID: 8482766830722654487, guid: b6a62739e4e626349bc971f6fe35ef50, type: 3}
   _wagonEmpty_2: {fileID: 8482766830722654487, guid: ffbebea9d1950b345a8d631ec411b7b7, type: 3}
   _wagonEmpty_3: {fileID: 8482766830722654487, guid: ddd25ee8037bfb24ba87e530525971c1, type: 3}
+  _batteryWagon: {fileID: 8482766830722654487, guid: 9c885ee09a379b740a342976535fcdd7, type: 3}
+  _fuelWagon: {fileID: 8482766830722654487, guid: 8135002f95cf0ad47bbd0f5e34fdb7f7, type: 3}
+  _engineeringWagon: {fileID: 8482766830722654487, guid: 98e534a57cc6abb46a92bab5d2353a94, type: 3}
+  _livingWagon: {fileID: 8482766830722654487, guid: 7a81dce7bde57614dae2450e2fd27693, type: 3}
+  _mlitaryWagon: {fileID: 8482766830722654487, guid: b9fccf60bf1fb12498cd1786c3c47c2c, type: 3}
+  _solarBWagon: {fileID: 8482766830722654487, guid: 09eedc4dd3c375d4a906cf00bbeed3be, type: 3}
+  _fuelPowerGeneratorWagon: {fileID: 8482766830722654487, guid: 8475e43fe21ff0d44ad0504971a16002, type: 3}
 --- !u!114 &603485460
 MonoBehaviour:
   m_ObjectHideFlags: 0

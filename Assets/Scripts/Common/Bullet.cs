@@ -45,7 +45,6 @@ namespace Common
         public void Deativate()
         {
             gameObject.SetActive(false);
-
             _bulletPool.Retern(this);
         }
 
