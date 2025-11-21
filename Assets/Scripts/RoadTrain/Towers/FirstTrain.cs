@@ -34,7 +34,7 @@ public class FirstTrain : MonoBehaviour
         _firstWagon.Add(25);
         _firstWagon.Add(31);
         _firstWagon.Add(35);
-        _firstWagon.Add(40);
+        _firstWagon.Add(41);
 
         YG2.saves.SavedWagons = _firstWagon;
         YG2.saves.SavedTowers = _firstWeapon;
