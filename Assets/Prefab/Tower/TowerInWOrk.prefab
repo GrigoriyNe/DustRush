@@ -169,6 +169,7 @@ MonoBehaviour:
   _prefabBullet: {fileID: 9148466009995680302, guid: 66cd8427c186f1045b25150a238a4094, type: 3}
   _damage: 20
   _isPlayerBullet: 1
+  _shootPoint: {fileID: 3725377711044723935}
 --- !u!114 &180760230113066153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +236,7 @@ MonoBehaviour:
   _barrel: {fileID: 1490589519483820861}
   _rotationSpeed: 180
   _angleOffset: -90
+  _shootDelay: 0.1
 --- !u!1 &6114054424651196652
 GameObject:
   m_ObjectHideFlags: 0

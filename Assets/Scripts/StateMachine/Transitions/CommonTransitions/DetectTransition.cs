@@ -43,14 +43,14 @@ namespace StateMachine
 
                     if (angle <= _viewAngle)
                     {
-                        SendPlayerTransform(hit.transform);
+                        SendEnemyTransform(hit.transform);
                         StartCoroutine(TransitAfterDelay(_detectReactionDelay));
                     }
                 }
             }
         }
 
-        private void SendPlayerTransform(Transform playerTransform)
+        private void SendEnemyTransform(Transform playerTransform)
         {
             _enemyTransform = playerTransform;
             TargetState.SetEnemyTransform(_enemyTransform);
