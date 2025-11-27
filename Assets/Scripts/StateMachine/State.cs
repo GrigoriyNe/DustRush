@@ -18,6 +18,7 @@ namespace StateMachine
                 foreach (var transition in _transitions)
                 {
                     transition.enabled = true;
+                    transition.SetTarget(Enemy);
                 }
             }
         }
