@@ -6,76 +6,76 @@ namespace RoadTrane
 {
     public class WagonsHashTable : MonoBehaviour
     {
-        private const int IdWagonEmpty_1 = 10;
+        private const int IdWagonEmpty_1 = 37;
         private const string IdWagonEmptyName_1 = "Empty_1";
 
-        private const int IdWagonEmpty_2 = 11;
+        private const int IdWagonEmpty_2 = 38;
         private const string IdWagonEmptyName_2 = "Empty_2";
 
-        private const int IdWagonEmpty_3 = 12;
+        private const int IdWagonEmpty_3 = 39;
         private const string IdWagonEmptyName_3 = "Empty_3";
 
-        private const int IdWagonBattery = 21;
+        private const int IdWagonBattery = 40;
         private const string IdWagonBatteryWagonName = "BatteryWagon";
 
-        private const int IdWagonBattery2 = 22;
+        private const int IdWagonBattery2 = 41;
         private const string IdWagonBatteryWagonName2 = "BatteryWagon2";
 
-        private const int IdWagonBattery3 = 23;
+        private const int IdWagonBattery3 = 42;
         private const string IdWagonBatteryWagonName3 = "BatteryWagon3";
 
-        private const int IdFuelWagon = 25;
+        private const int IdFuelWagon = 43;
         private const string IdFuelWagonName = "FuelWagon";
 
-        private const int IdFuelWagon2 = 26;
+        private const int IdFuelWagon2 = 44;
         private const string IdFuelWagonName2 = "FuelWagon2";
 
-        private const int IdFuelWagon3 = 27;
+        private const int IdFuelWagon3 = 45;
         private const string IdFuelWagonName3 = "FuelWagon3";
 
-        private const int IdEngineeringWagon = 31;
+        private const int IdEngineeringWagon = 46;
         private const string IdEngineeringWagonName = "EngineeringWagon";
 
-        private const int IdEngineeringWagon2 = 32;
+        private const int IdEngineeringWagon2 = 47;
         private const string IdEngineeringWagonName2 = "EngineeringWagon2";
 
-        private const int IdEngineeringWagon3 = 33;
+        private const int IdEngineeringWagon3 = 48;
         private const string IdEngineeringWagonName3 = "EngineeringWagon3";
 
-        private const int IdLivingWagon = 35;
+        private const int IdLivingWagon = 49;
         private const string IdLivingWagonName = "LivingWagon";
 
-        private const int IdLivingWagon2 = 36;
+        private const int IdLivingWagon2 = 50;
         private const string IdLivingWagonName2 = "LivingWagon2";
 
-        private const int IdLivingWagon3 = 37;
+        private const int IdLivingWagon3 = 51;
         private const string IdLivingWagonName3 = "LivingWagon3";
 
-        private const int IdMlitaryWagon = 41;
+        private const int IdMlitaryWagon = 52;
         private const string IdMlitaryWagonName = "MlitaryWagon";
 
-        private const int IdMlitaryWagon2 = 42;
+        private const int IdMlitaryWagon2 = 53;
         private const string IdMlitaryWagonName2 = "MlitaryWagon2";
 
-        private const int IdMlitaryWagon3 = 43;
+        private const int IdMlitaryWagon3 = 54;
         private const string IdMlitaryWagonName3 = "MlitaryWagon3";
 
-        private const int IdSolarBWagon = 45;
+        private const int IdSolarBWagon = 55;
         private const string IdSolarBWagonName = "SolarBWagon";
 
-        private const int IdSolarBWagon2 = 46;
+        private const int IdSolarBWagon2 = 56;
         private const string IdSolarBWagonName2 = "SolarBWagon2";
 
-        private const int IdSolarBWagon3 = 47;
+        private const int IdSolarBWagon3 = 57;
         private const string IdSolarBWagonName3 = "SolarBWagon3";
 
-        private const int IdFuelPowerGeneratorWagon = 51;
+        private const int IdFuelPowerGeneratorWagon = 58;
         private const string IdFuelPowerGeneratorWagonName = "FuelPowerGeneratorWagon";
 
-        private const int IdFuelPowerGeneratorWagon2 = 52;
+        private const int IdFuelPowerGeneratorWagon2 = 59;
         private const string IdFuelPowerGeneratorWagonName2 = "FuelPowerGeneratorWagon2";
 
-        private const int IdFuelPowerGeneratorWagon3 = 53;
+        private const int IdFuelPowerGeneratorWagon3 = 60;
         private const string IdFuelPowerGeneratorWagonName3 = "FuelPowerGeneratorWagon3";
 
         [SerializeField] private GameObject _wagonEmpty_1;
@@ -183,19 +183,6 @@ namespace RoadTrane
 
             _wagonsTable.Add(IdFuelPowerGeneratorWagon3,
                _fuelPowerGeneratorWagon3);
-
-
-            InitId();
-        }
-
-        private void InitId()
-        {
-            foreach (var item in _wagonsTable)
-            {
-                var wagon = item.Value.GetComponent<Wagon>();
-
-                wagon.SetID(item.Key);
-            }
         }
     }
 }

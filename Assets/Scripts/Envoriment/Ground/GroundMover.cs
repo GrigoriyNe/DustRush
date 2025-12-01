@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 namespace Environment
@@ -31,6 +33,9 @@ namespace Environment
 
         private void OnEnable()
         {
+            if (SceneManager.GetActiveScene().name == "Sity")
+                return;
+
             _waitFullSpeed = new WaitForSeconds(_eachSecondAcceleration);
             _waitPlayBoost = new WaitForSeconds(_boostDelayValue);
             StartMoving();
@@ -44,6 +49,9 @@ namespace Environment
 
         private void StartMoving()
         {
+            if (SceneManager.GetActiveScene().name == "Sity")
+                return;
+
             StartCoroutine(Acceleration());
             StartCoroutine(Moving());
         }
@@ -59,6 +67,9 @@ namespace Environment
 
         private void MovingUp()
         {
+            if (SceneManager.GetActiveScene().name == "Sity")
+                return;
+
             Vector2 targetUp = new Vector2(_backgroundImage.position.x, (_startPositionY - CurrentSpeed));
 
             _backgroundImage.transform.position = targetUp;

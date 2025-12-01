@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace RoadTrane
 {
@@ -24,8 +25,12 @@ namespace RoadTrane
         private void OnEnable()
         {
             _waitReternVibration = new WaitForSeconds(_reternValue);
-            Vibration();
             OnEnabled();
+
+            if (SceneManager.GetActiveScene().name == "Sity")
+                return;
+
+            Vibration();
         }
 
         public abstract void OnEnabled();

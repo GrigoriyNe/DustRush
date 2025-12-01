@@ -17,6 +17,9 @@ namespace RoadTrane
         private int _idTower;
         private int _fullId;
 
+        public int FullId => _fullId;
+        public int PositionOnTrane => _positionOnTrane;
+
         public void OnEnable()
         {
             _health.ChangeMaxHealth(_maxHealth);
@@ -31,7 +34,7 @@ namespace RoadTrane
         private void OnHealChange(int value)
         {
             if (value == 0)
-                TowerDead?.Invoke(_fullId);
+                TowerDead?.Invoke(_fullId + _idTower);
         }
 
         public void SetID(int key)

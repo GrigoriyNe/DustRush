@@ -19,7 +19,7 @@ namespace Common
 
             // добавил тут инициализацию Value
             // а то свойство было объявлено, а значение нигде не присвоено 
-            Value = _maxHealth; 
+            Value = _maxHealth;
         }
 
         public void Healing()
@@ -52,10 +52,9 @@ namespace Common
                 Value = 0;
                 IsDead = true;
 
+                HealthChanged?.Invoke(Value);
                 gameObject.SetActive(false);
             }
-
-            HealthChanged?.Invoke(Value);
         }
     }
 }

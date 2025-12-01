@@ -8,36 +8,36 @@ public class TowersHashTable : MonoBehaviour
     private const int IdMashineGun_2 = 12;
     private const int IdMashineGun_3 = 13;
 
-    private const int IdShotgun_1 = 21;
-    private const int IdShotgun_2 = 22;
-    private const int IdShotgun_3 = 23;
+    private const int IdShotgun_1 = 14;
+    private const int IdShotgun_2 = 15;
+    private const int IdShotgun_3 = 16;
 
-    private const int IdHarpoon_1 = 31;
-    private const int IdHarpoon_2 = 32;
-    private const int IdHarpoon_3 = 33;
+    private const int IdHarpoon_1 = 17;
+    private const int IdHarpoon_2 = 18;
+    private const int IdHarpoon_3 = 19;
 
-    private const int IdMortar_1 = 41;
-    private const int IdMortar_2 = 42;
-    private const int IdMortar_3 = 43;
+    private const int IdMortar_1 = 20;
+    private const int IdMortar_2 = 21;
+    private const int IdMortar_3 = 22;
 
-    private const int IdRocketLauncher_1 = 51;
-    private const int IdRocketLauncher_2 = 52;
-    private const int IdRocketLauncher_3 = 53;
+    private const int IdRocketLauncher_1 = 23;
+    private const int IdRocketLauncher_2 = 24;
+    private const int IdRocketLauncher_3 = 25;
 
-    private const int IdFlamethrower_1 = 61;
-    private const int IdFlamethrower_2 = 62;
-    private const int IdFlamethrower_3 = 63;
+    private const int IdFlamethrower_1 = 26;
+    private const int IdFlamethrower_2 = 27;
+    private const int IdFlamethrower_3 = 28;
 
-    private const int IdGaussGun_1 = 71;
-    private const int IdGaussGun_2 = 72;
-    private const int IdGaussGun_3 = 73;
+    private const int IdGaussGun_1 = 29;
+    private const int IdGaussGun_2 = 30;
+    private const int IdGaussGun_3 = 31;
 
-    private const int IdEMPCannon_1 = 81;
-    private const int IdEMPCannon_2 = 82;
-    private const int IdEMPCannon_3 = 83;
+    private const int IdEMPCannon_1 = 32;
+    private const int IdEMPCannon_2 = 33;
+    private const int IdEMPCannon_3 = 34;
 
-    private const int IdFridge = 91;
-    private const int IdMachineGunDepot = 92;
+    private const int IdFridge = 35;
+    private const int IdMachineGunDepot = 36;
 
     [SerializeField] private GameObject _mashineGunPrefab_1;
     [SerializeField] private GameObject _mashineGunPrefab_2;
@@ -156,15 +156,5 @@ public class TowersHashTable : MonoBehaviour
 
         _towersTable.Add(IdMachineGunDepot,
              _machineGunDepotPrefab);
-    }
-
-    private void InitId()
-    {
-        foreach (var item in _towersTable)
-        {
-            var towers = item.Value.GetComponent<Tower>();
-
-            towers.SetID(item.Key);
-        }
     }
 }

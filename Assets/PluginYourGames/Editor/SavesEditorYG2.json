@@ -1,0 +1,38 @@
+{
+    "intExample": 5,
+    "strExample": "Hello!",
+    "boolExample": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "idSave": 123,
+    "Money": 500,
+    "Metal": 500,
+    "TruskType": "Speeder",
+    "SavedWagons": [
+        39,
+        39,
+        39,
+        39,
+        39
+    ],
+    "SavedTowers": [
+        1316,
+        2015,
+        2528,
+        1620,
+        1214,
+        2316,
+        2216,
+        3120,
+        320,
+        615,
+        4420,
+        15,
+        1715,
+        2115
+    ],
+    "SavedCell": []
+}

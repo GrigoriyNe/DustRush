@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace RoadTrane
 {
@@ -17,13 +19,16 @@ namespace RoadTrane
         [SerializeField] private Transform _backCouplingPosition;
 
         [SerializeField] private string Name;
-        [SerializeField] private Type TypeWagon;
+        [SerializeField] private Type _typeWagon;
 
         private Environment.GroundMover _groundMover;
 
         private Vector3 SeparateFinalPosition = new Vector3(0, -30f, 0);
         private Coroutine _separating = null;
         private float _separateSpeed;
+
+        public Type TypeWagon => _typeWagon;
+        public List<Transform> PointsTower => _pointsTower;
 
         public Transform BackCouplingPosition => _backCouplingPosition;
 
@@ -36,6 +41,10 @@ namespace RoadTrane
         private void OnDisable()
         {
             _separating = null;
+
+            if (SceneManager.GetActiveScene().name == "Sity")
+                return;
+
             _groundMover.SpeedChanged -= OnSpeedShange;
         }
 
@@ -46,6 +55,10 @@ namespace RoadTrane
         public void Init(Environment.GroundMover groundMover)
         {
             _groundMover = groundMover;
+
+            if (SceneManager.GetActiveScene().name == "Sity")
+                return;
+
             _separateSpeed = _groundMover.CurrentSpeed;
             _groundMover.SpeedChanged += OnSpeedShange;
         }

@@ -14,7 +14,7 @@ namespace RoadTrane
 
         public int Place { get; private set; }
 
-        private void OnEnable()
+        private void Start()
         {
             _health.HealthChanged += OnHealChange;
             _health.ChangeMaxHealth(_maxHealth);
@@ -41,9 +41,9 @@ namespace RoadTrane
 
         private void OnHealChange(int value)
         {
-
             if (_health.Value <= 0)
             {
+                Debug.Log(value);
                 _fabric.SeparateWagon(Place);
             }
         }

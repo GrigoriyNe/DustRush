@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CounterEffector :  MonoBehaviour
 {
-    private const float SecondWathingValue = 1.5f;
+    private const float SecondWathingValue = .5f;
    
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private Color _defaultColor;
