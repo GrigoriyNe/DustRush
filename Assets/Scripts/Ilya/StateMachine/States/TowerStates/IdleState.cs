@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace StateMachine
 {
-    public class IdleState : State {
-
+    public class IdleState : State 
+    {
         [SerializeField] private Transform _barrel;
         [SerializeField] private float _rotationSpeed;
 
