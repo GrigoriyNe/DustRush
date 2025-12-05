@@ -41,12 +41,14 @@ namespace RoadTrane
 
         private void OnEnable()
         {
-            _hashTableTower = _towersHash.TowersTable;
-            _hashTableWagon = _wagonsHash.WagonsTable;
         }
 
         private void Start()
         {
+            _hashTableTower = _towersHash.TowersTable;
+            _hashTableWagon = _wagonsHash.WagonsTable;
+            _loadedWagons = YG2.saves.SavedWagons;
+            _loadedTowers = YG2.saves.SavedTowers;
             Load();
         }
 
@@ -89,7 +91,7 @@ namespace RoadTrane
             wagon = Instantiate(_hashTableWagon[id].GetComponent<Wagon>());
             wagon.SetID(id);
 
-            if (_wagons.Count > 0)
+            if (_createdWagons.Count > 0)
                 wagon.transform.position = _createdWagons[_createdWagons.Count - 1].GetComponent<Wagon>().BackCouplingPosition.position;
             else
                 wagon.transform.position = Vector2.zero;
@@ -108,7 +110,7 @@ namespace RoadTrane
             {
                 foreach (int item in _loadedTowers)
                 {
-                    if (item < 1000 || item > changedWagon * 1000 && item < (changedWagon + 1) * 1000)
+                    if (item > changedWagon * 1000 && item < (changedWagon + 1) * 1000)
                     {
                         ContentRetern?.Invoke(item);
                         cashTower.Add(item);
@@ -223,9 +225,8 @@ namespace RoadTrane
 
         private void CreateTruck()
         {
-
             CreatedTruck = Instantiate(_truck,
-                transform.position = _wagons[0].GetComponent<Wagon>().FrontCouplingPosition.position,
+                transform.position = _createdWagons[0].GetComponent<Wagon>().FrontCouplingPosition.position,
                 Quaternion.identity);
 
             _truckInstaller.SetType(CreatedTruck.TypeTrusk);
@@ -288,8 +289,6 @@ namespace RoadTrane
 
         private void Load()
         {
-            _loadedWagons = YG2.saves.SavedWagons;
-            _loadedTowers = YG2.saves.SavedTowers;
 
             foreach (int item in _loadedTowers)
             {
@@ -320,6 +319,9 @@ namespace RoadTrane
                 _wagons.Add(newWagon);
                 newWagon.SetID(item);
             }
+
+            Debug.Log(_loadedWagons.Count);
+            Debug.Log(_loadedTowers.Count);
 
             Create();
         }

@@ -4,6 +4,7 @@ namespace YG
 {
     public partial class SavesYG
     {
+        public string CurrentScene = "SampleScene";
         public int Money = 500;
         public int Metal = 500;
 
@@ -15,6 +16,5 @@ namespace YG
         public List<int> SavedCell= new List<int>();
 
         public List<int> OpenBlueprint = new List<int>();
-
     }
 }

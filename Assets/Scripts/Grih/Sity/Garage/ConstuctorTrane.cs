@@ -61,7 +61,6 @@ namespace Sity
 
             foreach (var item in _createdUiWagons)
             {
-
                 _placeUi.Clicked -= OnWagonClicked;
             }
 
@@ -75,7 +74,7 @@ namespace Sity
         {
             foreach (var item in _createdUiWagons)
             {
-                if (item.gameObject.activeSelf == false)
+                if (item != null)
                 {
                     item.gameObject.SetActive(active);
                 }
@@ -83,7 +82,7 @@ namespace Sity
 
             foreach (var item in _createdUiTower)
             {
-                if (item.gameObject.activeSelf == false)
+                if (item != null)
                 {
                     item.gameObject.SetActive(active);
                 }
@@ -91,6 +90,12 @@ namespace Sity
 
             if (_clickedEnd.gameObject.activeSelf == false)
                 _clickedEnd.gameObject.SetActive(active);
+
+            if (active == false)
+            {
+                _createdUiWagons = new List<UiForConstuctorTrane>();
+                _createdUiTower = new List<UiForConstuctorTrane>();
+            }
         }
 
         public void UpdateInventoryPlayer()

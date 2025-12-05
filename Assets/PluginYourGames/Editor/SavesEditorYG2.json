@@ -7,32 +7,45 @@
         false,
         false
     ],
-    "idSave": 250,
-    "Money": 680,
-    "Metal": 450,
+    "idSave": 299,
+    "CurrentScene": "Sity",
+    "Money": 490,
+    "Metal": 185,
     "TruskType": "Speeder",
     "SavedWagons": [
+        39,
         37,
         37,
-        37,
-        37,
-        37
+        39
     ],
     "SavedTowers": [
-        1015,
-        115
+        111,
+        12,
+        213,
+        314,
+        415,
+        516,
+        617,
+        718,
+        2221,
+        2322,
+        3223,
+        3124
     ],
     "SavedCell": [
-        28,
-        15,
-        16,
-        16,
-        16,
-        15,
-        15,
-        15,
+        19,
         20,
         16
     ],
-    "OpenBlueprint": []
+    "OpenBlueprint": [
+        1,
+        11,
+        12,
+        14,
+        17,
+        20,
+        37,
+        38,
+        43
+    ]
 }
