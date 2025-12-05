@@ -96,13 +96,13 @@ GameObject:
   - component: {fileID: 858232704300484676}
   - component: {fileID: 5646450722544494893}
   - component: {fileID: 6578382306846967256}
-  - component: {fileID: 5320752075590433509}
   - component: {fileID: 180760230113066153}
-  - component: {fileID: 1986292506563510870}
+  - component: {fileID: 6308868659811228498}
   - component: {fileID: 6534699871370872929}
   - component: {fileID: 5009692330273175582}
   - component: {fileID: 5322629023440481111}
   - component: {fileID: 5708803295496969118}
+  - component: {fileID: 4351426121362233670}
   - component: {fileID: 9117322940352673347}
   m_Layer: 0
   m_Name: TowerInWOrk
@@ -158,22 +158,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 0
---- !u!114 &5320752075590433509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5804457351511402349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 168bef0a5c71244439428ee5dda5ee73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefabBullet: {fileID: 9148466009995680302, guid: 66cd8427c186f1045b25150a238a4094, type: 3}
-  _damage: 1
-  _isPlayerBullet: 1
-  _shootPoint: {fileID: 3725377711044723935}
 --- !u!114 &180760230113066153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0122ce0679c4894db452d29627a58d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firstState: {fileID: 1986292506563510870}
---- !u!114 &1986292506563510870
+  _firstState: {fileID: 6308868659811228498}
+--- !u!114 &6308868659811228498
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,11 +180,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5804457351511402349}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ac0dcca724b72c4194f3ae1cebe4e3f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d96bf9a5f502d140b15f927a615a3dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 6534699871370872929}
+  _barrel: {fileID: 1490589519483820861}
+  _rotationSpeed: 50
 --- !u!114 &6534699871370872929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetState: {fileID: 5009692330273175582}
   _detectionRadius: 5
-  _viewAngle: 180
+  _viewAngle: 135
   _detectReactionDelay: 0
   _targetLayer:
     serializedVersion: 2
@@ -267,8 +253,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 686c566123d62ea4a88f91df9ff1a169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitions: []
-  _shootDelay: 0.8
+  _transitions:
+  - {fileID: 4351426121362233670}
+  _shootDelay: 0.15
+--- !u!114 &4351426121362233670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5804457351511402349}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71240672c7e22ca4ebd5b65855e3abe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetState: {fileID: 6308868659811228498}
 --- !u!114 &9117322940352673347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,10 +281,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168bef0a5c71244439428ee5dda5ee73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabBullet: {fileID: 0}
-  _damage: 0
-  _isPlayerBullet: 0
-  _shootPoint: {fileID: 0}
+  _prefabBullet: {fileID: 9148466009995680302, guid: 66cd8427c186f1045b25150a238a4094, type: 3}
+  _damage: 10
+  _isPlayerBullet: 1
+  _shootPoint: {fileID: 3725377711044723935}
 --- !u!1 &6114054424651196652
 GameObject:
   m_ObjectHideFlags: 0
