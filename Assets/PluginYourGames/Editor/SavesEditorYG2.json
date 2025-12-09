@@ -7,15 +7,17 @@
         false,
         false
     ],
+
     "idSave": 302,
     "CurrentScene": "Sity",
     "Money": 490,
     "Metal": 185,
+  
     "TruskType": "Speeder",
     "SavedWagons": [
         39,
-        37,
-        37,
+        43,
+        38,
         39
     ],
     "SavedTowers": [
@@ -27,18 +29,22 @@
         516,
         617,
         718,
-        2221,
-        2322,
         3223,
-        3124
+        3124,
+        2211,
+        2120,
+        3720,
+        2317
     ],
     "SavedCell": [
+        21,
+        22,
         19,
-        20,
         16
     ],
     "OpenBlueprint": [
         1,
+        2,
         11,
         12,
         14,

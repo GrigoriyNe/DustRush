@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Sity
+namespace Modules.Grih.Sity
 {
     public class ConstuctorTrane : MonoBehaviour
     {
@@ -28,8 +28,6 @@ namespace Sity
         private Coroutine _waitingChoise;
         private WaitForSeconds _waitChoise;
         private float _waitValue = 0.5f;
-
-        public event Action<int> TruskChanged;
 
         private void OnEnable()
         {
@@ -88,8 +86,9 @@ namespace Sity
                 }
             }
 
-            if (_clickedEnd.gameObject.activeSelf == false)
-                _clickedEnd.gameObject.SetActive(active);
+            if (_clickedEnd != null)
+                if (_clickedEnd.gameObject.activeSelf == false)
+                    _clickedEnd.gameObject.SetActive(active);
 
             if (active == false)
             {
@@ -188,7 +187,6 @@ namespace Sity
                 if (idContent < 5)
                 {
                     _fabricTrane.CreatedTruck.ChangeType(idContent);
-                    TruskChanged?.Invoke(idContent);
                     _isWaitTrusk = false;
                     _garageInventoryPlayer.RemoveCell(idContent);
                     _garageInventoryPlayer.StopEffect();
