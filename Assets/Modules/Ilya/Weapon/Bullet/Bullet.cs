@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Common;
+using EnemyGroup;
 
 namespace WeaponGroup
 {
