@@ -628,15 +628,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a6a4a2e8f4fe744592842e5485b4688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _global: {fileID: 1616429636}
+  _changeButton: {fileID: 534690885}
+  _sceneChanger: {fileID: 534690888}
   _allCells:
   - {fileID: 509671277}
   - {fileID: 187554764}
   - {fileID: 421903064}
   - {fileID: 665935144}
   - {fileID: 1899309670}
-  _global: {fileID: 1616429636}
-  _changeButton: {fileID: 534690885}
-  _sceneChanger: {fileID: 534690888}
 --- !u!1 &417603724
 GameObject:
   m_ObjectHideFlags: 0
@@ -3122,7 +3122,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1114473548}
-  - component: {fileID: 1114473547}
+  - component: {fileID: 1114473549}
+  - component: {fileID: 1114473550}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -3130,20 +3131,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1114473547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114473546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14c2eeea1b9ec2040971b5d2e308c517, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 0}
-  _initialCount: 0
 --- !u!4 &1114473548
 Transform:
   m_ObjectHideFlags: 0
@@ -3159,6 +3146,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1114473549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114473546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade59e71a1d23ef49949545950d603e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoint: {fileID: 0}
+--- !u!114 &1114473550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114473546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67d18683c737202439674b62cd439f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyPrefab: {fileID: 1458595923593221433, guid: 3ad9d85c46ff650409ff21d2f0c7503e, type: 3}
 --- !u!1 &1132933696
 GameObject:
   m_ObjectHideFlags: 0
