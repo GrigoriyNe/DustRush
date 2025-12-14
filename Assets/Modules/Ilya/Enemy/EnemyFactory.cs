@@ -1,34 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pool;
 
 namespace EnemyGroup
 {
     public class EnemyFactory : MonoBehaviour
     {
-        [SerializeField] private Enemy _enemyPrefab;
+        [SerializeField] private int _enemiesInPool;
+        [SerializeField] private List<Enemy> _enemyPrefabs;
 
         private EnemyPool _enemyPool;
-        private List<List<Enemy>> _createdEnemies = new();
+        private List<EnemyPool> _readyMadeEnemiesPools = new List<EnemyPool>();
+
+        public List<EnemyPool> ReadyMadeEnemiesPools => _readyMadeEnemiesPools;
 
         private void OnEnable()
         {
-            _enemyPool = new EnemyPool(_enemyPrefab);
-            _createdEnemies.Add(_enemyPool.CreateEnemy(10));
-            Debug.Log(_createdEnemies);
+            CreateEnemyPools();
         }
 
-        //private void OnEnable()
-        //{
-        //    _enemyPool.CreateEnemy(_enemyPrefab);
-        //}
-        //public Enemy CreateEnemy(Vector3 position, Quaternion rotation)
-        //{
-        //    Enemy enemy = _enemyPool.Get();
-        //    enemy.SetPositionAndRotation(position, rotation);
-        //    enemy.OnSpawned();
-        //    return enemy;
-        //}
+        private void CreateEnemyPools()
+        {
+            foreach (var enemy in _enemyPrefabs)
+            {
+                _enemyPool = new EnemyPool(enemy);
+                _enemyPool.CreateEnemy(_enemiesInPool);
+                _readyMadeEnemiesPools.Add(_enemyPool);
+                Debug.Log(_readyMadeEnemiesPools);
+            }
+        }
     }
 }

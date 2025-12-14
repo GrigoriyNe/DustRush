@@ -6,14 +6,9 @@ namespace EnemyGroup
     [RequireComponent(typeof(Common.Health))]
     public class Enemy : MonoBehaviour
     {
-        public void SetPositionAndRotation(Vector3 position, Quaternion rotation)
+        private void Update()
         {
-            throw new NotImplementedException();
-        }
-
-        public void OnSpawned()
-        {
-            throw new NotImplementedException();
+            transform.Translate(Vector3.up * 1f * Time.deltaTime);
         }
     }
 }

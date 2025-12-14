@@ -1,18 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Pool;
 
 namespace EnemyGroup
 {
     public class EnemyPool
     {
-        //private int _initialCount;
         private Enemy _enemyPrefab;
         private Pool<Enemy> _enemyPool;
 
-        private List<Enemy> _createdEnemies = new();
+        private List<Enemy> _createdEnemies = new List<Enemy>();
 
         public EnemyPool(Enemy prefab)
         {
@@ -24,6 +22,11 @@ namespace EnemyGroup
             SetEnemy(_enemyPrefab);
             FillEnemiesPool(count);
             return _createdEnemies;
+        }
+
+        public Enemy GetEnemy()
+        {
+            return _enemyPool.GetItem() as Enemy;
         }
 
         public void ReturnToPool(Enemy enemy)
@@ -40,11 +43,10 @@ namespace EnemyGroup
         {
             for (int i = 0; i < count; i++)
             {
-                //_createdEnemies.Add(_enemyPool.GetItem() as Enemy);
                 Enemy enemy = _enemyPool.GetItem() as Enemy;
-                Debug.Log(enemy);
+                enemy.gameObject.SetActive(false);
+
                 _createdEnemies.Add(enemy);
-                Debug.Log(_createdEnemies);
             }
         }
     }
