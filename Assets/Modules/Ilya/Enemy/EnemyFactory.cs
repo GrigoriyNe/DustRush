@@ -6,8 +6,7 @@ namespace EnemyGroup
 {
     public class EnemyFactory : MonoBehaviour
     {
-        [SerializeField] private int _enemiesInPool;
-        [SerializeField] private List<Enemy> _enemyPrefabs;
+        [SerializeField] private EnemyLevelConfig _levelConfig;
 
         private EnemyPool _enemyPool;
         private List<EnemyPool> _readyMadeEnemiesPools = new List<EnemyPool>();
@@ -21,12 +20,11 @@ namespace EnemyGroup
 
         private void CreateEnemyPools()
         {
-            foreach (var enemy in _enemyPrefabs)
+            foreach (var enemy in _levelConfig.EnemyPrefab)
             {
                 _enemyPool = new EnemyPool(enemy);
-                _enemyPool.CreateEnemy(_enemiesInPool);
+                _enemyPool.CreateEnemy(_levelConfig.PoolSize);
                 _readyMadeEnemiesPools.Add(_enemyPool);
-                Debug.Log(_readyMadeEnemiesPools);
             }
         }
     }
