@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221b9166d43e07c49a1c594eb4648e83, type: 3}
   m_Name: Level_1
   m_EditorClassIdentifier: 
-  LevelName: 
+  LevelName: Level_1
   SpawnInterval: 3
-  EnemyPools: []
+  EnemyPrefab:
+  - {fileID: 1458595923593221433, guid: 3ad9d85c46ff650409ff21d2f0c7503e, type: 3}
+  - {fileID: 1458595923593221433, guid: 32d3ffef65b88984c8d52c43b480a29c, type: 3}
+  PoolSize: 5

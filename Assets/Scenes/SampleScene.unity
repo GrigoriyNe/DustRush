@@ -3960,10 +3960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67d18683c737202439674b62cd439f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemiesInPool: 10
-  _enemyPrefabs:
-  - {fileID: 1458595923593221433, guid: 3ad9d85c46ff650409ff21d2f0c7503e, type: 3}
-  - {fileID: 1458595923593221433, guid: 32d3ffef65b88984c8d52c43b480a29c, type: 3}
+  _levelConfig: {fileID: 11400000, guid: e3da418ff96054d4881ffcdb8458b39b, type: 2}
 --- !u!1 &1132933696
 GameObject:
   m_ObjectHideFlags: 0
