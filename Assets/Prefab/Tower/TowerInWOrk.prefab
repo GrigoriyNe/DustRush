@@ -207,10 +207,6 @@ MonoBehaviour:
   _targetLayer:
     serializedVersion: 2
     m_Bits: 64
-  _isCooldownActive: 0
-  _cooldown: 0
-  _offsetY: 0
-  _offsetX: 0
 --- !u!114 &5009692330273175582
 MonoBehaviour:
   m_ObjectHideFlags: 0

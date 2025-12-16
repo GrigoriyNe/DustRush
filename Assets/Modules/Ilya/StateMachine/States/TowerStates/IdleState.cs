@@ -6,8 +6,17 @@ namespace StateMachine
     {
         [SerializeField] private Transform _barrel;
         [SerializeField] private float _rotationSpeed;
+        [SerializeField] private bool _isLeft;
 
         private float _startAngle = 270f;
+
+        private void OnEnable()
+        {
+            if (_isLeft)
+            {
+                _startAngle *= -1;
+            }
+        }
 
         private void Update()
         {

@@ -13,6 +13,7 @@ namespace StateMachine
         [SerializeField, Range(0f, 360f)] private float _viewAngle = 180f;
         [SerializeField] private float _detectReactionDelay = 0.1f;
         [SerializeField] private LayerMask _targetLayer;
+        [SerializeField] private bool _isLeft;
 
         private Coroutine _detectCoroutine;
         private Transform _enemyTransform;
@@ -29,7 +30,8 @@ namespace StateMachine
 
             if (hits.Length == 0) return;
 
-            Vector2 forward = transform.right;
+            Vector2 forward = _isLeft ? -transform.right : transform.right;
+
             float halfViewAngle = _viewAngle * 0.5f;
 
             foreach (var hit in hits)
@@ -72,7 +74,7 @@ namespace StateMachine
             Gizmos.DrawWireSphere(transform.position, _detectionRadius);
 
             Vector3 origin = transform.position;
-            Vector3 forward = transform.right;
+            Vector3 forward = _isLeft ? -transform.right : transform.right;
 
             float halfAngle = _viewAngle * 0.5f;
 
