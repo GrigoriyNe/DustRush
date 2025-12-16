@@ -6,7 +6,7 @@ namespace Modules.Grih.LootLocation
 {
     public class LootBox : MonoBehaviour
     {
-        private const float RangeForOpen = 5f;
+        private const float RangeForOpen = 3f;
 
         private const int MinRandomRange = 1;
         private const int MaxRandomRange = 4;
