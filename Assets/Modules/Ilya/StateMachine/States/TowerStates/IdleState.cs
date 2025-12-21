@@ -6,6 +6,7 @@ namespace StateMachine
     {
         [SerializeField] private Transform _barrel;
         [SerializeField] private float _rotationSpeed;
+        [SerializeField] private TurretType _turretType;
         
         private bool _isLeft;
         private float _startAngle;
@@ -19,22 +20,30 @@ namespace StateMachine
 
         private void SetSide()
         {
-            if (transform.position.x < 0)
+            if (_turretType == TurretType.TrainTurret)
             {
-                _isLeft = true;
-            }
-            else
-            {
-                _isLeft = false;
+                if (transform.position.x < 0)
+                {
+                    _isLeft = true;
+                }
+                else
+                {
+                    _isLeft = false;
+                }
+
+                if (_isLeft)
+                {
+                    _startAngle = _leftStartAngle;
+                }
+                else
+                {
+                    _startAngle = _rightStartAngle;
+                }
             }
 
-            if (_isLeft)
+            if (_turretType == TurretType.EnemyTurret)
             {
-                _startAngle = _leftStartAngle;
-            }
-            else
-            {
-                _startAngle = _rightStartAngle;
+                _startAngle = 0f;
             }
         }
 
@@ -45,5 +54,11 @@ namespace StateMachine
 
             _barrel.rotation = Quaternion.Euler(0f, 0f, newAngle);
         }
+    }
+
+    public enum TurretType
+    {
+        TrainTurret,
+        EnemyTurret
     }
 }

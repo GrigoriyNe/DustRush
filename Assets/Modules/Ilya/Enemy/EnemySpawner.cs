@@ -8,6 +8,7 @@ namespace EnemyGroup
     {
         [SerializeField] private List<GameObject> _spawnPoints;
         [SerializeField] private EnemyFactory _enemyFactory;
+        [SerializeField] private float _delay;
 
         private void OnEnable()
         {
@@ -18,7 +19,7 @@ namespace EnemyGroup
         {
             while (true)
             {
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(_delay);
                 SpawnRandomEnemy();
             }
         }

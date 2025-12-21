@@ -4896,6 +4896,7 @@ MonoBehaviour:
   - {fileID: 825586163}
   - {fileID: 91595457}
   _enemyFactory: {fileID: 1114473550}
+  _delay: 23.4
 --- !u!114 &1114473550
 MonoBehaviour:
   m_ObjectHideFlags: 0
