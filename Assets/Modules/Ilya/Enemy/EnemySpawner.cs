@@ -40,6 +40,7 @@ namespace EnemyGroup
 
             enemy.transform.position = spawnPoint.position;
             enemy.transform.rotation = spawnPoint.rotation;
+            enemy.DefineSide();
         }
     }
 }

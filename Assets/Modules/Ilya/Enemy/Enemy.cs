@@ -10,8 +10,11 @@ namespace EnemyGroup
     {
         private ITowerProvider _towerProvider;
 
-        private List<Tower> _towers;
         private bool _isInitialized;
+        private bool _isLeft;
+
+        public bool IsLeft => _isLeft;
+
 
         public void Init(ITowerProvider towerProvider)
         {
@@ -32,9 +35,16 @@ namespace EnemyGroup
             //удалить если в дальнейшем не понадобится
         }
 
-        private void Update()
+        public void DefineSide()
         {
-            transform.Translate(Vector3.up * 1f * Time.deltaTime);
+            if (transform.position.x < 0)
+            {
+                _isLeft = true;
+            }
+            else
+            {
+                _isLeft = false;
+            }
         }
     }
 }

@@ -213,3 +213,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions: []
+  _distanceFromTower: 4.35
+  _areaSize: {x: 1.5, y: 3}
+  _moveSpeed: 2

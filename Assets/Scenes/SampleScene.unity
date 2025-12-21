@@ -4909,6 +4909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelConfig: {fileID: 11400000, guid: e3da418ff96054d4881ffcdb8458b39b, type: 2}
+  _fabricTrane: {fileID: 603485456}
 --- !u!1 &1132933696
 GameObject:
   m_ObjectHideFlags: 0
