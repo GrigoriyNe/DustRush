@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1490589519483820861}
   - component: {fileID: 105885299886658533}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,6 +94,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 858232704300484676}
+  - component: {fileID: 3123260661170821146}
   - component: {fileID: 5646450722544494893}
   - component: {fileID: 6578382306846967256}
   - component: {fileID: 180760230113066153}
@@ -105,7 +106,7 @@ GameObject:
   - component: {fileID: 1445175833229499828}
   - component: {fileID: 4351426121362233670}
   - component: {fileID: 9117322940352673347}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TowerInWOrk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,6 +130,59 @@ Transform:
   - {fileID: 1490589519483820861}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &3123260661170821146
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5804457351511402349}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.22925568, y: 0.64548093}
+      - {x: -0.24674535, y: 0.6399014}
+      - {x: -0.64030963, y: 0.22639287}
+      - {x: -0.6582825, y: -0.2258116}
+      - {x: -0.23018263, y: -0.64620715}
+      - {x: 0.22279286, y: -0.6462698}
+      - {x: 0.64226055, y: -0.22901595}
+      - {x: 0.63702285, y: 0.23211089}
+  m_UseDelaunayMesh: 0
 --- !u!114 &5646450722544494893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +242,7 @@ MonoBehaviour:
   - {fileID: 6534699871370872929}
   _barrel: {fileID: 1490589519483820861}
   _rotationSpeed: 50
-  _isLeft: 0
+  _turretType: 0
 --- !u!114 &6534699871370872929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +258,6 @@ MonoBehaviour:
   TargetState: {fileID: 5009692330273175582}
   _detectionRadius: 5
   _viewAngle: 135
-  _detectReactionDelay: 0
   _targetLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -239,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetState: {fileID: 5708803295496969118}
   _turretBarrelTransform: {fileID: 1490589519483820861}
+  _minAngelToShoot: 2
 --- !u!114 &5708803295496969118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,7 +363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2956302157445524330}
   - component: {fileID: 4099527168574592965}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ButtonTextureYG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3725377711044723935}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shoot_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}

@@ -8,7 +8,7 @@ namespace EnemyGroup
     {
         [SerializeField] private List<GameObject> _spawnPoints;
         [SerializeField] private EnemyFactory _enemyFactory;
-        //[SerializeField] private FabricTrane _fabricTrane;
+        [SerializeField] private float _delay;
 
         private void OnEnable()
         {
@@ -19,7 +19,7 @@ namespace EnemyGroup
         {
             while (true)
             {
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(_delay);
                 SpawnRandomEnemy();
             }
         }
@@ -41,6 +41,7 @@ namespace EnemyGroup
 
             enemy.transform.position = spawnPoint.position;
             enemy.transform.rotation = spawnPoint.rotation;
+            enemy.DefineSide();
         }
     }
 }

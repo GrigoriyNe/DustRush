@@ -7,6 +7,7 @@
         false,
         false
     ],
+    
     "idSave": 2232,
     "CurrentScene": "SampleScene",
     "Money": 30,
@@ -82,10 +83,17 @@
         29
     ],
     "IsGoingToPath": false,
+<<<<<<< HEAD
     "SavedDeport": "Lesson",
     "SavedPointToRoad": "FirstSity",
+=======
+    "SavedDeport": "FirstPathOnFirstSity",
+    "SavedPointToRoad": "FirstPathOnFirstSity",
+>>>>>>> 1e7542d83532783a99fe6d2fb01e473f4f50b5ba
     "OpenLocals": [
-        "FirstSity"
+        "FirstSity",
+        "FirstPathOnFirstSity",
+        "SecondPathOnFirstSity"
     ],
     "SavedTowns": [
     ]

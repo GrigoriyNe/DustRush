@@ -16,12 +16,15 @@ namespace Modules.Grih.RoadTrane
         private int _positionOnTrane;
         private int _idTower;
         private int _fullId;
+        private bool _isLeft;
 
         public int FullId => _fullId;
         public int PositionOnTrane => _positionOnTrane;
+        public bool IsLeft => _isLeft;
 
         public void OnEnable()
         {
+            DefineSide();
             _health.ChangeMaxHealth(_maxHealth);
             _health.HealthChanged += OnHealChange;
         }
@@ -46,6 +49,18 @@ namespace Modules.Grih.RoadTrane
         {
             _positionOnTrane = value;
             _fullId = (_positionOnTrane * 100) + _idTower;
+        }
+
+        private void DefineSide()
+        {
+            if (transform.position.x < 0)
+            {
+                _isLeft = true;
+            }
+            else
+            {
+                _isLeft = false;
+            }
         }
     }
 }
