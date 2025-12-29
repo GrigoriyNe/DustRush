@@ -7,10 +7,10 @@
         false,
         false
     ],
-    "idSave": 617,
+    "idSave": 889,
     "CurrentScene": "SampleScene",
-    "Money": 79,
-    "Metal": 108,
+    "Money": 270,
+    "Metal": 285,
     "Dollars": 329,
     "IsFirstTraneBuld": true,
     "TruskType": "Speeder",
@@ -18,7 +18,9 @@
         39,
         38,
         37,
-        39
+        39,
+        40,
+        44
     ],
     "SavedTowers": [
         111,
@@ -27,22 +29,24 @@
         314,
         516,
         617,
-        718,
-        1519,
-        1120,
         2221,
         2322,
-        3223,
         3124,
-        1411,
-        1012,
         435,
-        1335,
-        1236
+        3211,
+        719,
+        1311,
+        3412,
+        1520,
+        1236,
+        1011,
+        1412,
+        3012,
+        1111,
+        3312
     ],
     "SavedCell": [
-        36,
-        12
+        40
     ],
     "OpenBlueprint": [
         1,
