@@ -87,8 +87,11 @@ namespace Modules.Grih.Sity
             }
 
             if (_clickedEnd != null)
-                if (_clickedEnd.gameObject.activeSelf == false)
-                    _clickedEnd.gameObject.SetActive(active);
+                _clickedEnd.gameObject.SetActive(active);
+
+            if (_clickedTrusk != null)
+                _clickedTrusk.gameObject.SetActive(active);
+
 
             if (active == false)
             {
@@ -172,7 +175,7 @@ namespace Modules.Grih.Sity
 
             if (_isWaitTower)
             {
-                if (idContent < 36 && idContent > 5)
+                if (idContent < 37 && idContent > 5)
                 {
                     _fabricTrane.AddTower(idContent, _waitPlaceTower);
                     _waitPlaceTower = 0;

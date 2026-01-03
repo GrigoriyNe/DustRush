@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inventory;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,11 +13,15 @@ namespace Modules.Grih.Sity
         [SerializeField] private Button _buttonActivate;
         [SerializeField] private Button _buttonSale;
         [SerializeField] private GameObject _effector;
+        [SerializeField] private int _coustOnBlueprint;
 
         [SerializeField] private TextMeshProUGUI _coustMoneyView;
         [SerializeField] private TextMeshProUGUI _coustMetalView;
 
-        private GameObject _boxNeedBlueprint;
+        private ShopCellNeedBlueprint _boxNeedBlueprint;
+        private Dollars _dollars;
+        private BlueprintObserver _blueprintObserver;
+
         public int IdContent { get; private set; }
         public bool IsByed { get; private set; } = false;
 
@@ -54,6 +59,12 @@ namespace Modules.Grih.Sity
                 IdContent = key;
         }
 
+        public void InitOnShop(Dollars dollars, BlueprintObserver blueprintObserver)
+        {
+            _dollars = dollars;
+            _blueprintObserver = blueprintObserver;
+        }
+
         private void OnClickSale()
         {
             Saled?.Invoke(IdContent, _coustMoney, _coustMetal);
@@ -80,14 +91,19 @@ namespace Modules.Grih.Sity
             _buttonActivate.interactable = true;
         }
 
-        public void SetNonactiveState()
+        public void SetActiveState(bool isActive)
         {
-            _buttonActivate.interactable = false;
+            _buttonActivate.interactable = isActive;
 
-            GameObject boxNeedBlueprintNew = Instantiate(_boxNeedBlueprint);
+            if (isActive == false)
+            {
+                ShopCellNeedBlueprint boxNeedBlueprintNew = Instantiate(_boxNeedBlueprint);
 
-            boxNeedBlueprintNew.transform.position = transform.position;
-            boxNeedBlueprintNew.transform.SetParent(transform);
+                boxNeedBlueprintNew.transform.position = transform.position;
+                boxNeedBlueprintNew.transform.SetParent(transform);
+
+                boxNeedBlueprintNew.Init(this, _coustOnBlueprint, _dollars, _blueprintObserver);
+            }
         }
 
         public void StopShowing()
@@ -112,7 +128,7 @@ namespace Modules.Grih.Sity
             }
         }
 
-        public void SetBox(GameObject boxNeedBlueprint)
+        public void SetBox(ShopCellNeedBlueprint boxNeedBlueprint)
         {
             _boxNeedBlueprint = boxNeedBlueprint;
         }
