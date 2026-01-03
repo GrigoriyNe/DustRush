@@ -450,7 +450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetState: {fileID: 7995389466920803531}
   _turretBarrelTransform: {fileID: 3689767013121547445}
-  _maxAngleToKeepShooting: 28.5
+  _maxAngleToKeepShooting: 20
 --- !u!114 &3093830746803865394
 MonoBehaviour:
   m_ObjectHideFlags: 0
